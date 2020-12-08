@@ -8,7 +8,7 @@ int main(void)
 	    cout<<"369 game start!!!"<<endl; 
 	      cout<<setw(3)<<1<<" : "; 
 	        cin>>answer_2; 
-		  game( 1, answer_2 ); 
+		  game_2( 1, answer_2 ); 
 		    return 0; 
 } 
 void game_2(int number_2, int answer_2) 
@@ -19,7 +19,7 @@ void game_2(int number_2, int answer_2)
 					    { 
 						          cout<<setw(3)<<++number_2<<" : "; 
 							        cin>>answer_2; 
-								      game(number_2, answer_2); 
+								      game_2(number_2, answer_2); 
 								         } 
 				   else 
 					      { 
@@ -43,7 +43,7 @@ void game_2(int number_2, int answer_2)
 		    { 
 			      cout<<setw(3)<<++number_2<<" : "; 
 			        cin>>answer_2; 
-				  game(number_2, answer_2); 
+				  game_2(number_2, answer_2); 
 		    } 
 	  } 
 } 
