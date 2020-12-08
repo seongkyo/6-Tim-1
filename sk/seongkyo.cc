@@ -26,7 +26,14 @@ int main(void)
 	//////////////////// 로또게임 /////////////////////////
 	 case 2:
 	srand((unsigned int)time(0));
-	int lotto_2[45] = {};
+	int lotto_2[45] = {},ar_2[6],money_2=100;
+	cout<<"가진돈 : "<<money_2<<endl;
+L:
+	cout<<"번호입력 : ";
+	for(int i=0;i<6;i++){
+		cin>>ar_2[i];
+	}
+
 
 	for(int a_2=0;a_2<45;a_2++){
 		lotto_2[a_2]=a_2+1;
@@ -41,8 +48,38 @@ int main(void)
 	}
 	for(int a_2=0;a_2<5;a_2++){
 		cout<<lotto_2[a_2]<<"|";
-	}
+	}	
 	cout<<"보너스 : "<< lotto_2[5]<<endl;
+	int c_2=0;
+	for(int i=0;i<6;i++){
+		for(int j=0;j<6;j++){
+			if(ar_2[i]==lotto_2[j]){
+				c_2++;
+			}
+		}
+	}
+	if(c_2==0 ){
+		money_2=money_2/2;
+		cout<<"가진돈 : "<<money_2<<endl;
+	}
+	else if(c_2==1 || c_2==2){
+		money_2=money_2*2;
+		cout<<"가진돈 : "<<money_2<<endl;
+	}
+	else if(c_2==3 || c_2==4 || c_2==5){
+		money_2=money_2*4;
+		cout<<"가진돈 : "<<money_2<<endl;
+	}
+	else if(c_2==6){
+		money_2=money_2*8;
+		cout<<"가진돈 : "<<money_2<<endl;
+	}
+	cout<<"다시 하시겠습니까[1/0] : ";
+	int l_2;
+	cin>>l_2;
+	if(l_2)
+		goto L;
+		
 	break;
 	}
 	/////////////////////////////////////////////////////
