@@ -1,16 +1,58 @@
 #include <iostream> 
 #include <iomanip> 
+#include <time.h>
 using namespace std; 
 void game_2(int number_2, int answer_2); 
+
+////////////////////////////////////////////////////////////////
 int main(void) 
 { 
+	int x;
+	cout<<"game select : ";
+	cin>>x;
+	switch(x){
+	////////////////////// 369 게임 /////////////////////////
+	  case 1:
 	  int answer_2; 
 	    cout<<"369 game start!!!"<<endl; 
 	      cout<<setw(3)<<1<<" : "; 
 	        cin>>answer_2; 
 		  game_2( 1, answer_2 ); 
-		    return 0; 
+	break;
+
+	////////////////////////////////////////////////////////
+	//
+	//
+	//////////////////// 로또게임 /////////////////////////
+	 case 2:
+	srand((unsigned int)time(0));
+	int lotto_2[45] = {};
+
+	for(int a_2=0;a_2<45;a_2++){
+		lotto_2[a_2]=a_2+1;
+	}
+	int temp_2,index1_2,index2_2;
+	for(int a_2=0;a_2<100;a_2++){
+		index1_2=rand()%45;
+		index2_2=rand()%45;
+		temp_2=lotto_2[index1_2];
+		lotto_2[index1_2]=lotto_2[index2_2];
+		lotto_2[index2_2]=temp_2;
+	}
+	for(int a_2=0;a_2<5;a_2++){
+		cout<<lotto_2[a_2]<<"|";
+	}
+	cout<<"보너스 : "<< lotto_2[5]<<endl;
+	break;
+	}
+	/////////////////////////////////////////////////////
+
+
+return 0;
 } 
+
+
+///////////////////////////////////////////////////////////////
 void game_2(int number_2, int answer_2) 
 { 
 	  if( answer_2==0 ) 
