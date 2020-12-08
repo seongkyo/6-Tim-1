@@ -1,25 +1,25 @@
 #include <iostream> 
 #include <iomanip> 
 using namespace std; 
-void game(int number, int answer); 
+void game_2(int number_2, int answer_2); 
 int main(void) 
 { 
-	  int answer; 
+	  int answer_2; 
 	    cout<<"369 game start!!!"<<endl; 
 	      cout<<setw(3)<<1<<" : "; 
-	        cin>>answer; 
-		  game( 1, answer ); 
+	        cin>>answer_2; 
+		  game( 1, answer_2 ); 
 		    return 0; 
 } 
-void game(int number, int answer) 
+void game_2(int number_2, int answer_2) 
 { 
-	  if( answer==0 ) 
+	  if( answer_2==0 ) 
 		    { 
-			        if( number%10==3 || number%10==6 || number%10==9 ) 
+			        if( number_2%10==3 || number_2%10==6 || number_2%10==9 ) 
 					    { 
-						          cout<<setw(3)<<++number<<" : "; 
-							        cin>>answer; 
-								      game(number, answer); 
+						          cout<<setw(3)<<++number_2<<" : "; 
+							        cin>>answer_2; 
+								      game(number_2, answer_2); 
 								         } 
 				   else 
 					      { 
@@ -29,21 +29,21 @@ void game(int number, int answer)
 		    } 
 	  else 
 	  { 
-		    if( number%10==3 || number%10==6 || number%10==9 ) 
+		    if( number_2%10==3 || number_2%10==6 || number_2%10==9 ) 
 			      { 
 				          cout<<"게임 종료"<<endl; 
 					      return; 
 					       } 
-		     else if( number!=answer ) 
+		     else if( number_2!=answer_2 ) 
 			      { 
 				         cout<<"게임 종료"<<endl; 
 					    return; 
 			      } 
 		    else 
 		    { 
-			      cout<<setw(3)<<++number<<" : "; 
-			        cin>>answer; 
-				  game(number, answer); 
+			      cout<<setw(3)<<++number_2<<" : "; 
+			        cin>>answer_2; 
+				  game(number_2, answer_2); 
 		    } 
 	  } 
 } 
