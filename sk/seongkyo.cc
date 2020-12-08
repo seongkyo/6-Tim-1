@@ -11,10 +11,10 @@ int main(void)
 	cout<<"game select : ";
 	cin>>x;
 	switch(x){
-	////////////////////// 369 게임 /////////////////////////
+	////////////////////// 369+5의배수  게임 /////////////////////////
 	  case 1:
 	  int answer_2; 
-	    cout<<"369 game start!!!"<<endl; 
+	    cout<<"369+5의배수 game start!!!"<<endl; 
 	      cout<<setw(3)<<1<<" : "; 
 	        cin>>answer_2; 
 		  game_2( 1, answer_2 ); 
@@ -69,9 +69,9 @@ void game_2(int number_2, int answer_2)
 							        return; 
 								  } 
 		    } 
-	  else 
+	  else if(answer_2!=0 && answer_2!=-1) 
 	  { 
-		    if( number_2%10==3 || number_2%10==6 || number_2%10==9 ) 
+		    if( number_2%10==3 || number_2%10==6 || number_2%10==9 || number_2%10==0 || number_2%10==5) 
 			      { 
 				          cout<<"게임 종료"<<endl; 
 					      return; 
@@ -88,4 +88,16 @@ void game_2(int number_2, int answer_2)
 				  game_2(number_2, answer_2); 
 		    } 
 	  } 
+	  else if(answer_2==-1){
+	  	if(number_2%10==0 || number_2%10==5){
+			cout<<setw(3)<<++number_2<<" : ";
+			cin>>answer_2;
+			game_2(number_2,answer_2);
+		}
+		else{
+			cout<<"게임 종료"<<endl;
+			return;
+		
+		}
+	  }
 } 
