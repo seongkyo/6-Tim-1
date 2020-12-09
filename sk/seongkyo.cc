@@ -77,6 +77,7 @@ L:
 	cout<<"다시 하시겠습니까[1/0] : ";
 	int l_2;
 	cin>>l_2;
+	cout<<endl;
 	if(l_2==1)
 		goto L;
 		
